@@ -1,0 +1,32 @@
+{
+    "source" : [
+        {
+            "1st sem" : [
+                {
+                    "PPS" : {
+                        "link" : "https://drive.google.com/file/",
+                        "is_folder_file" : true
+                    }
+                },
+                {
+                    "ED" : {
+                        "link" : "https://drive.google.com/file/",
+                        "is_folder_file" : true
+                    }
+                }
+            ],
+            "is_folder_file" : false
+        },
+        {
+            "2nd sem" : [
+                {
+                    "DS" : {
+                        "link" : "https://drive.google.com/file/",
+                        "is_folder_file" : false
+                    }
+                }
+            ],
+            "is_folder_file" : false
+        }
+    ]
+}

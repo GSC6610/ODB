@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ODB | {{ title }}</title>
+  <link rel="icon" href="/static/img/logos/favicon.ico">
+  <link rel="stylesheet" href="/static/css/sem.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@200&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex">
+      {% for sem in sems %}
+        <div class="">
+          <div class="w-2">
+            <img src="/static/img/fold.png" alt="fold" width="20%">
+            <a href="sem-{{ sem }}.html">
+                <p>{{ sem }}th sem</p>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+
+</html>
