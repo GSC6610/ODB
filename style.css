@@ -1,0 +1,97 @@
+
+body {
+  background-color: black;
+}
+
+h2 {
+  color: white;
+  font-family: 'Alkatra', cursive;
+  font-size: 3rem;
+}
+
+h1 {
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 4rem;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-link {
+  display: inline-block;
+  color: white;
+  margin: 0 0.2rem 0.4rem;
+}
+
+.foot {
+  margin-top: 3rem;
+  color: #EEEEEE;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.abc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.aaa{
+  background-image: linear-gradient(
+    -225deg,
+    #337CCF 0%,
+    #279EFF 29%,
+    #40F8FF 67%,
+    #525FE1 100%
+  );
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .column {
+    flex: 100%;
+   padding: 5px;
+   text-align: center;
+  }
+
+  .column img {
+    width: 100%;
+    height: auto;
+  }
+}
