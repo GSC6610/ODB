@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ODB | Home</title>
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="static/css/style.css">
-  <script src="https://kit.fontawesome.com/6187763f01.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Alkatra:wght@700&family=Lobster&display=swap" rel="stylesheet">
-</head>
-
-<body>
+{% block body %}
   <center>
     <h2>O D B</h2>
   </center>
@@ -25,7 +12,7 @@
     <div class="column">
       <br><br><br><br><br><br>
       <center>
-        <a href="sem.html">
+        <a href="/btech">
           <h1 class="aaa">One Day Batting</h1>
         </a>
       </center>
@@ -43,6 +30,4 @@
       © Gandhe Sai Chandar
     </div>
   </div>
-</body>
-
-</html>
+{% endblock %}

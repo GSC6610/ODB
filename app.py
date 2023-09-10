@@ -3,6 +3,7 @@ from json import load, dump
 from os import listdir, path, mkdir, remove, rename
 
 app = Flask(__name__)
+
 data = None
 with open('data.json', 'r') as f:
     data = load(f)
@@ -15,8 +16,9 @@ def index():
     """
     return render_template('index.html')
 
+@app.route('/btech')
 @app.route('/btech/<path>')
-def path(path):
+def path(path = ""):
     """Summary
 
     this function is used to render the path of the btech folder
@@ -27,23 +29,42 @@ def path(path):
     """
     folder_data = data
 
-    try:
-        for folder in path.split('/'):
-            print(folder, end = "\n" * 3)
-            folder_data = folder_data[folder]
-        
-        if folder_data['is_folder_file'] == False:
-            return render_template(
-                'explorer.html', 
-                path = path, 
-                title = path, 
-                folders = folder_data['folders'],
-            )
-        else:
-            return redirect(folder_data['link'])
+    current_path = list(
+        filter(
+            lambda x : x.strip() != "", 
+            path.strip().split('-')
+        )
+    )
 
-    except KeyError:
-        return render_template('404.html')
+    for required_folder in current_path:
+        if required_folder in folder_data["folders"]:
+            folder_data = folder_data["folders"][required_folder]
+        else:
+            raise KeyError("key not found")
+
+    
+    if folder_data.get('is_file_folder', False) == False:
+
+        result_folders = []
+        for subfolder_name, subfolder_data in folder_data["folders"].items():
+            result_folders.append([
+                subfolder_name,
+                "-".join(current_path + [subfolder_name]),
+                subfolder_data.get('is_file_folder', False)
+            ])
+
+        return render_template(
+            'explorer.html', 
+            title = path,
+            path = path, 
+            folders = result_folders
+        )
+    else:
+        return redirect(folder_data["link"])
+        return webbrowser.open_new_tab(folder_data["link"])
+
+    # except KeyError:
+    #     return "Error"
 
     return render_template('explorer.html', path=path, title = path, sems = range(1, 11))
 
