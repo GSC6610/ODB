@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div class="container">
+    <div class="d-flex flex-wrap ">
+      {% for folder in folders %}
+        <div class="flex-item col-4 col-md-3">
+          {% if folder[2] %}
+            {% include 'components/files_folder.html' %}
+          {% else %}
+            {% include 'components/folders_folder.html' %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
